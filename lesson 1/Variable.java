@@ -1,5 +1,5 @@
 public class Variable {
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		byte core = 4;
 		short ram = 16;
 		int ssd = 256;
@@ -17,7 +17,5 @@ public static void main(String[] args) {
 		System.out.println("screen size : " + screenSize);
 		System.out.println("Mac or Win: " + macOrWindows);
 		System.out.println("Working on macbook? : " + macBook);
-
-
 	}
 }
