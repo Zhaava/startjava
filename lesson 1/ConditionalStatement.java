@@ -5,29 +5,29 @@ public class ConditionalStatement {
 		double height = 1.75;
 		char firstLetterOfName = 'M';
 		
-		if (age > 20){
+		if (age > 20) {
 			System.out.println("Adult");
 		}
 
-		if (maleTrueWomanFalse){
+		if (maleTrueWomanFalse) {
 			System.out.println("Male person");
 		}
 
-		if (!maleTrueWomanFalse){
+		if (!maleTrueWomanFalse) {
 			System.out.println("Female person");
 		}
 
-		if (height < 1.80){
+		if (height < 1.80) {
 			System.out.println("Middle");
 		} else {
 			System.out.println("High");
 		}
 		
-		if (firstLetterOfName == 'M'){
+		if (firstLetterOfName == 'M') {
 			System.out.println("Mick");
-		} else if (firstLetterOfName == 'I'){
+		} else if (firstLetterOfName == 'I') {
 			System.out.println("Ira");
-		} else{
+		} else {
 			System.out.println("Ivan");
 		}
 	}
