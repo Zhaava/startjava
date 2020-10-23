@@ -5,7 +5,7 @@ public class ConditionalStatement {
             System.out.println("Adult");
         }
 
-    boolean maleGender = true;
+    	boolean maleGender = true;
         if (maleGender) {
             System.out.println("Male person");
         }
