@@ -6,7 +6,7 @@ public class Wolf {
 	private int age = 10;
 	private String color = "White";
 
-	public char getSex () {
+	public char getSex() {
 		return sex;
 	}
 
@@ -14,7 +14,7 @@ public class Wolf {
 		this.sex = sex;
 	}
 	
-	public String getName () {
+	public String getName() {
 		return name;
 	}
 
@@ -30,7 +30,7 @@ public class Wolf {
 		this.weight = weight;
 	}
 	
-	public int getAge () {
+	public int getAge() {
 		return age;
 	}
 
@@ -39,7 +39,7 @@ public class Wolf {
 		else this.age = age;
 	}
 	
-	public String getColor () {
+	public String getColor() {
 		return color;
 	}
 
