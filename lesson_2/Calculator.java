@@ -1,5 +1,5 @@
 public class Calculator {
-	public static int count(int firstNumber, int secondNumber, char mathSign) {
+	public static int calculate(int firstNumber, int secondNumber, char mathSign) {
 		switch(mathSign) {
 			case '+':
 				return firstNumber + secondNumber;
@@ -11,13 +11,15 @@ public class Calculator {
 				return firstNumber / secondNumber;
 			case '^': {
 				int result = 1;
-				for (int i = 0; i < secondNumber; i++) result *= firstNumber;
+				for (int i = 0; i < secondNumber; i++) {
+					result *= firstNumber;
+				}
 				return result;
 			}
 			case '%':
 				return firstNumber % secondNumber;
 			default:
-				return 1;
+				return 0;
 		}
 	} 
 }
