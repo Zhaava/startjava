@@ -15,12 +15,12 @@ public class CalculatorTest {
 			int secondNumber = scan.nextInt();
 
 			System.out.println(firstNumber + " " + mathSign + " " + secondNumber + " = " + 
-								Calculator.calculate(firstNumber, secondNumber, mathSign));
+				Calculator.calculate(firstNumber, secondNumber, mathSign));
 
 			do {
 				System.out.println("Хотите продолжить? [да/нет]:");
 				exit = scan.nextLine();
-			} while (!((exit.equals("да") || exit.equals("нет"))));
+			} while (!exit.equals("да") && !exit.equals("нет"));
 		}
 	}
 }
