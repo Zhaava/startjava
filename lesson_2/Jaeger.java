@@ -1,8 +1,12 @@
 public class Jaeger {
 
-	String modelName, mark, origin;
-	float height, weight;
-	int speed, strength;
+	private String modelName;
+	private String mark ; 
+	private String origin;
+	private float height;
+	private float weight;
+	private int speed;
+	private int strength;
 
 	public Jaeger(String modelName, String mark, String origin,
 		float height, float weight, int speed, int strength) {
@@ -22,15 +26,43 @@ public class Jaeger {
 		this.origin = origin;
 	}
 
-	String getJaegerMark() {
+	String getJaegerModel() {
 		return modelName;
 	}
-
-	void move() {
-		System.out.println(getJaegerMark() + " is moving");
+	
+	void setJaegerModel(String modelName) {
+		this.modelName = modelName;
+	}
+	
+	String getJaegerMark() {
+		return mark;
+	}
+	
+	void setJaegerMark(String mark) {
+		this.mark = mark;
 	}
 
-	void useVortexCannon() {
-		System.out.println(getJaegerMark() + " is using vortex cannon");
+	String getJaegerOrigin() {
+		return origin;
+	}
+	
+	void setJaegerOrigin(String origin) {
+		this.origin = origin;
+	}
+	
+	int getJaegerSpeed() {
+		return speed;
+	}
+	
+	void setJaegerMark(int speed) {
+		this.speed = speed;
+	}
+	
+	void move(String modelName) {
+		System.out.println(modelName + " is moving");
+	}
+
+	void useVortexCannon(String modelName) {
+		System.out.println(modelName + " is using vortex cannon");
 	}
 }
