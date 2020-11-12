@@ -1,27 +1,20 @@
 public class JaegerTest {
 	public static void main(String[] args) {
-		Jaeger chernoAlpha = new Jaeger("unknown", "unknown", "unknown");
-		Jaeger strikerEureka = new Jaeger("unknown", "unknown", "unknown");
-		Jaeger gipsyDanger = new Jaeger("unknown", "unknown", "unknown");
+		Jaeger chernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia");
+		Jaeger strikerEureka = new Jaeger("Striker Eureka", "Mark-5", "Australia");
+		Jaeger gipsyDanger = new Jaeger("Gipsy Danger", "Mark-3", "USA");
 
-		chernoAlpha.setJaegerModel("Cherno Alpha");
-		chernoAlpha.setJaegerMark("Mark-1");
-		chernoAlpha.setJaegerOrigin("Russia");
+		chernoAlpha.setSpeed(40);
+		System.out.println("Alpha speed is: " + chernoAlpha.getSpeed());
+		chernoAlpha.setSpeed(60);
+		System.out.println("Alpha new speed is: " + chernoAlpha.getSpeed());
 
-		strikerEureka.setJaegerModel("Striker Eureka");
-		strikerEureka.setJaegerMark("Mark-5");
-		strikerEureka.setJaegerOrigin("Australia");
+		chernoAlpha.move(chernoAlpha.getModelName());
+		strikerEureka.move(strikerEureka.getModelName());
+		gipsyDanger.move(gipsyDanger.getModelName());
 
-		gipsyDanger.setJaegerModel("Gipsy Danger");
-		gipsyDanger.setJaegerMark("Mark-3");
-		gipsyDanger.setJaegerOrigin("USA");
-
-		chernoAlpha.move(chernoAlpha.getJaegerModel());
-		strikerEureka.move(strikerEureka.getJaegerModel());
-		gipsyDanger.move(gipsyDanger.getJaegerModel());
-
-		chernoAlpha.useVortexCannon(chernoAlpha.getJaegerModel());
-		strikerEureka.useVortexCannon(strikerEureka.getJaegerModel());
-		gipsyDanger.useVortexCannon(gipsyDanger.getJaegerModel());
+		chernoAlpha.useVortexCannon(chernoAlpha.getModelName());
+		strikerEureka.useVortexCannon(strikerEureka.getModelName());
+		gipsyDanger.useVortexCannon(gipsyDanger.getModelName());
 	}
 }

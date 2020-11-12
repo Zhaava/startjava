@@ -26,35 +26,35 @@ public class Jaeger {
 		this.origin = origin;
 	}
 
-	String getJaegerModel() {
+	String getModelName() {
 		return modelName;
 	}
 	
-	void setJaegerModel(String modelName) {
+	void setModelName(String modelName) {
 		this.modelName = modelName;
 	}
 	
-	String getJaegerMark() {
+	String getMark() {
 		return mark;
 	}
 	
-	void setJaegerMark(String mark) {
+	void setMark(String mark) {
 		this.mark = mark;
 	}
 
-	String getJaegerOrigin() {
+	String getOrigin() {
 		return origin;
 	}
 	
-	void setJaegerOrigin(String origin) {
+	void setOrigin(String origin) {
 		this.origin = origin;
 	}
 	
-	int getJaegerSpeed() {
+	int getSpeed() {
 		return speed;
 	}
 	
-	void setJaegerMark(int speed) {
+	void setSpeed(int speed) {
 		this.speed = speed;
 	}
 	
