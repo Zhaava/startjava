@@ -6,15 +6,15 @@ public class Player {
         this.name = name;
     }
 
+    String getName() {
+        return this.name;
+    }
+    
     void setNumber(int number) {
         this.number = number;
     }
 
     int getNumber() {
         return this.number;
-    }
-
-    String getName() {
-        return this.name;
     }
 }
