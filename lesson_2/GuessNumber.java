@@ -12,38 +12,45 @@ public class GuessNumber {
 	}
 
 	public void launch() {
-		Scanner scan = new Scanner(System.in);
+		
 
 		Random random = new Random();
 		computerNumber = random.nextInt(100);
 		System.out.println("Компьютер загадал " + computerNumber);
 
-		while(true) {
-			System.out.println(player1.getName() + " вводит число");
-			player1.setNumber(scan.nextInt());
-
+		do {
+			inputNumber(player1);
 			if (compareNumbers(player1)) {
 				break;
 			}
-
-			System.out.println(player2.getName() + " вводит число");
-			player2.setNumber(scan.nextInt());
-
-			if (compareNumbers(player2)) {
-				break;
-			}
-		}
+			inputNumber(player2);
+		} while(!compareNumbers(player2));
 	}
 
 	private boolean compareNumbers(Player player) {
-		if(player.getNumber() > computerNumber) {
-			System.out.println("Число " + player.getName() + " больше того, что загадал компьютер");
-		} else if(player.getNumber() < computerNumber) {
-			System.out.println("Число " + player.getName() + " меньше того, что загадал компьютер");
-		} else {
-			System.out.println(player.getName() + " победил!!!");
-			return true;
-		}
-		return false;
+		String num = player.getNumber() > computerNumber ? "Число больше того, что загадал компьютер" :
+			player.getNumber() < computerNumber ? " меньше того, что загадал компьютер" :" победил!!!";
+		System.out.println(num);
+		return player.getNumber() != computerNumber ? false:true;
+	}
+
+	public void inputNumber(Player player) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println(player.getName() + " вводит число");
+		player.setNumber(scan.nextInt());
 	}
 }
+
+
+
+	// private boolean compareNumbers(Player player) {
+	// 	if(player.getNumber() > computerNumber) {
+	// 		System.out.println("Число " + player.getName() + " больше того, что загадал компьютер");
+	// 	} else if(player.getNumber() < computerNumber) {
+	// 		System.out.println("Число " + player.getName() + " меньше того, что загадал компьютер");
+	// 	} else {
+	// 		System.out.println(player.getName() + " победил!!!");
+	// 		return true;
+	// 	}
+	// 	return false;
+	// }

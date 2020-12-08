@@ -19,7 +19,6 @@ public class GuessNumberTest {
 				System.out.println("Хотите продолжить? [да/нет]:");
 				exit = scan.nextLine();
 			} while (!exit.equals("да") && !exit.equals("нет"));
-			
 		}
 	}
 }
