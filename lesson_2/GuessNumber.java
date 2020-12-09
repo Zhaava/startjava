@@ -12,8 +12,6 @@ public class GuessNumber {
 	}
 
 	public void launch() {
-		
-
 		Random random = new Random();
 		computerNumber = random.nextInt(100);
 		System.out.println("Компьютер загадал " + computerNumber);
@@ -27,30 +25,17 @@ public class GuessNumber {
 		} while(!compareNumbers(player2));
 	}
 
-	private boolean compareNumbers(Player player) {
-		String num = player.getNumber() > computerNumber ? "Число больше того, что загадал компьютер" :
-			player.getNumber() < computerNumber ? " меньше того, что загадал компьютер" :" победил!!!";
-		System.out.println(num);
-		return player.getNumber() != computerNumber ? false:true;
-	}
-
-	public void inputNumber(Player player) {
+	private void inputNumber(Player player) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println(player.getName() + " вводит число");
 		player.setNumber(scan.nextInt());
 	}
+
+	private boolean compareNumbers(Player player) {
+		boolean check = player.getNumber() == computerNumber;
+		String result = "Число " + (player.getNumber() > computerNumber ? "больше" : "меньше") + 
+						" того, что загадал компьютер";
+		System.out.println(result);
+		return check;
+	}
 }
-
-
-
-	// private boolean compareNumbers(Player player) {
-	// 	if(player.getNumber() > computerNumber) {
-	// 		System.out.println("Число " + player.getName() + " больше того, что загадал компьютер");
-	// 	} else if(player.getNumber() < computerNumber) {
-	// 		System.out.println("Число " + player.getName() + " меньше того, что загадал компьютер");
-	// 	} else {
-	// 		System.out.println(player.getName() + " победил!!!");
-	// 		return true;
-	// 	}
-	// 	return false;
-	// }
