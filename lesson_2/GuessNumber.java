@@ -32,10 +32,10 @@ public class GuessNumber {
 	}
 
 	private boolean compareNumbers(Player player) {
-		boolean check = player.getNumber() == computerNumber;
-		String result = "Число " + (player.getNumber() > computerNumber ? "больше" : "меньше") + 
+		String result = player.getNumber() == computerNumber ? player.getName() + " победил!" :
+						"Число " + (player.getNumber() > computerNumber ? "больше" : "меньше") + 
 						" того, что загадал компьютер";
 		System.out.println(result);
-		return check;
+		return player.getNumber() == computerNumber;
 	}
 }
