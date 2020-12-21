@@ -1,3 +1,4 @@
+package com.startjava.lesson_2_3.robot;
 public class JaegerTest {
 	public static void main(String[] args) {
 		Jaeger chernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia");
