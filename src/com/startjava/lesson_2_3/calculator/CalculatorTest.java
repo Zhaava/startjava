@@ -3,25 +3,26 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
-		String exit = "";
-		while(!exit.equals("нет")) {
-			System.out.print("Введите первое число: ");
-			Scanner scan = new Scanner(System.in);
-			int firstNumber = scan.nextInt();
+		Calculator calc = new Calculator();
+		Scanner scan = new Scanner(System.in);
+		String exit;
+		do {
+			System.out.print("Введите математическое выражение: ");
+			String mathExpression = scan.nextLine();
+			String[] arrExp = mathExpression.split(" ");
 
-			System.out.print("Введите знак математической операции: ");
-			char mathSign = scan.next().charAt(0);
+			calc.setFirstNumber(Integer.parseInt(arrExp[0]));
 
-			System.out.print("Введите второе число: ");
-			int secondNumber = scan.nextInt();
+			calc.setMathOperation(arrExp[1].charAt(0));
 
-			System.out.println(firstNumber + " " + mathSign + " " + secondNumber + " = " + 
-				Calculator.calculate(firstNumber, secondNumber, mathSign));
+			calc.setSecondNumber(Integer.parseInt(arrExp[2]));
 
+			calc.calculate();
 			do {
 				System.out.println("Хотите продолжить? [да/нет]:");
 				exit = scan.nextLine();
 			} while (!exit.equals("да") && !exit.equals("нет"));
-		}
+		} while(!exit.equals("нет"));
+		System.out.println("Калькулятор закрылся.");
 	}
 }

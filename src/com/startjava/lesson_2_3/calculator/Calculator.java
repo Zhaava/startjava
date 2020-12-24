@@ -1,26 +1,43 @@
 package com.startjava.lesson_2_3.calculator;
 public class Calculator {
-	public static int calculate(int firstNumber, int secondNumber, char mathSign) {
-		switch(mathSign) {
+	private int firstNumber;
+	private int secondNumber;
+	private char mathOperation;
+
+	public void setFirstNumber(int firstNumber) {
+		this.firstNumber = firstNumber;
+	}
+
+	public void setSecondNumber(int secondNumber) {
+		this.secondNumber = secondNumber;
+	}
+
+	public void setMathOperation(char mathOperation) {
+		this.mathOperation = mathOperation;
+	}
+
+	public void calculate() {
+		switch(mathOperation) {
 			case '+':
-				return firstNumber + secondNumber;
+				System.out.println(firstNumber + secondNumber);
+				break;
 			case '-':
-				return firstNumber - secondNumber;
+				System.out.println(firstNumber - secondNumber);
+				break;
 			case '*':
-				return firstNumber * secondNumber;
+				System.out.println(firstNumber * secondNumber);
+				break;
 			case '/':
-				return firstNumber / secondNumber;
-			case '^': {
-				int result = 1;
-				for (int i = 0; i < secondNumber; i++) {
-					result *= firstNumber;
-				}
-				return result;
-			}
+				System.out.println(firstNumber / secondNumber);
+				break;
+			case '^':
+				System.out.println(Math.pow(firstNumber, secondNumber));
+				break;
 			case '%':
-				return firstNumber % secondNumber;
+				System.out.println(firstNumber % secondNumber);
+				break;
 			default:
-				return 0;
+				System.out.println("Error");
 		}
-	} 
+	}
 }
