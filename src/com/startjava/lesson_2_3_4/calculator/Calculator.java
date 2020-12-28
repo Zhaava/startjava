@@ -1,15 +1,11 @@
 package com.startjava.lesson_2_3_4.calculator;
 
-import java.util.Scanner;
-
 public class Calculator {
 	private int firstNumber;
 	private int secondNumber;
 	private char mathOperation;
 
-	public Calculator() {
-		Scanner scan = new Scanner(System.in);
-		String mathExpression = scan.nextLine();
+	public Calculator(String mathExpression) {
 		String[] arrExp = mathExpression.split(" ");
 		firstNumber = Integer.parseInt(arrExp[0]);
 		mathOperation = arrExp[1].charAt(0);
