@@ -1,23 +1,17 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
+
 import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
-		Calculator calc = new Calculator();
+
 		Scanner scan = new Scanner(System.in);
 		String exit;
 		do {
 			System.out.print("Введите математическое выражение: ");
-			String mathExpression = scan.nextLine();
-			String[] arrExp = mathExpression.split(" ");
+			Calculator calc = new Calculator();
 
-			calc.setFirstNumber(Integer.parseInt(arrExp[0]));
-
-			calc.setMathOperation(arrExp[1].charAt(0));
-
-			calc.setSecondNumber(Integer.parseInt(arrExp[2]));
-
-			calc.calculate();
+			System.out.println(calc.calculate());
 			do {
 				System.out.println("Хотите продолжить? [да/нет]:");
 				exit = scan.nextLine();
