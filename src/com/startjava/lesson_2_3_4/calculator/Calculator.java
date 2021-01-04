@@ -27,7 +27,8 @@ public class Calculator {
 			case '%':
 				return firstNumber % secondNumber;
 			default:
-				return -1;
+				System.out.println("Error!");
+				return 0;
 		}
 	}
 }

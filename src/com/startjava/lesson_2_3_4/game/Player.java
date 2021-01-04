@@ -3,7 +3,18 @@ package com.startjava.lesson_2_3_4.game;
 public class Player {
 	private String name;
 	private int number;
-	public int[] storage = new int[10];
+	private int[] enteredNumbers = new int[10];
+
+
+	public int[] getEnteredNumbers() {
+		return enteredNumbers;
+	}
+
+	public void setEnteredNumbers(int index, int number) {
+		this.enteredNumbers[index] = number;
+	}
+
+
 
 	public Player(String name) {
 		this.name = name;
