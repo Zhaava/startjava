@@ -1,20 +1,10 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
+
 public class Player {
 	private String name;
-	private int number;
 	private int[] enteredNumbers = new int[10];
-
-
-	public int[] getEnteredNumbers() {
-		return enteredNumbers;
-	}
-
-	public void setEnteredNumbers(int index, int number) {
-		this.enteredNumbers[index] = number;
-	}
-
-
 
 	public Player(String name) {
 		this.name = name;
@@ -24,11 +14,11 @@ public class Player {
 		return name;
 	}
 
-	void setNumber(int number) {
-		this.number = number;
+	public int[] getEnteredNumbers() {
+		return Arrays.copyOf(enteredNumbers, 10);
 	}
 
-	int getNumber() {
-		return number;
+	public void setEnteredNumber(int index, int number) {
+		enteredNumbers[index] = number;
 	}
 }

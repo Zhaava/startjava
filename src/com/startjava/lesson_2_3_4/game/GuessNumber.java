@@ -22,44 +22,45 @@ public class GuessNumber {
 		System.out.println("Компьютер загадал " + computerNumber);
 		System.out.println("у вас 10 попыток.");
 		do {
-			inputNumber(player1);
-			player1.setEnteredNumbers(attempt, player1.getNumber());
+			player1.setEnteredNumber(attempt, inputNumber(player1));
 			if (compareNumbers(player1)) {
 				break;
 			}
-			inputNumber(player2);
-			player2.setEnteredNumbers(attempt, player2.getNumber());
+			player2.setEnteredNumber(attempt, inputNumber(player2));
+			if (compareNumbers(player2)) {
+				break;
+			}
 			attempt++;
 			if (attempt == 10) {
 				System.out.println("У игроков закончились попытки");
 			}
-		} while(!(compareNumbers(player2)) & !(attempt == 10));
+		} while(!(attempt == 10));
+
 		attempt = 0;
-		playerOutput(player1);
-		playerOutput(player2);
+		playerOutputNumbers(player1);
+		playerOutputNumbers(player2);
 		Arrays.fill(player1.getEnteredNumbers(),0);
 		Arrays.fill(player2.getEnteredNumbers(),0);
 	}
 
-	private void inputNumber(Player player) {
+	private int inputNumber(Player player) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println(player.getName() + " вводит число");
-		player.setNumber(scan.nextInt());
+		return scan.nextInt();
 	}
 
 	private boolean compareNumbers(Player player) {
-		String result;
-		if (player.getNumber() == computerNumber) {
-			result = player.getName() + " победил!";
-			System.out.println(result);
+		if (player.getEnteredNumbers()[attempt] == computerNumber) {
+			System.out.println(player.getName() + " победил!");
 			return true;
 		}
-		result = "Число " + (player.getNumber() > computerNumber ? "больше" : "меньше") + " того, что загадал компьютер";
-		System.out.println(result);
+		System.out.println("Число " +
+				(player.getEnteredNumbers()[attempt] > computerNumber ? "больше" : "меньше")
+				+ " того, что загадал компьютер");
 		return false;
 	}
 
-	private void playerOutput(Player player){
+	private void playerOutputNumbers(Player player) {
 		System.out.println("Числа которые ввел " + player.getName());
 		for (int num : player.getEnteredNumbers()) {
 			System.out.print(num + " ");
