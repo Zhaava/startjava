@@ -15,7 +15,7 @@ public class Player {
     }
 
     public int[] getEnteredNumbers() {
-        return Arrays.copyOf(enteredNumbers, 10);
+        return Arrays.copyOf(enteredNumbers, GuessNumber.getAttempt() + 1);
     }
 
     public void setEnteredNumber(int index, int number) {

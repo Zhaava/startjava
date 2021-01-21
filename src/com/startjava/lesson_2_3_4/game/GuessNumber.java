@@ -5,10 +5,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private int computerNumber;
+    private int hiddenNum;
     private Player player1;
     private Player player2;
-    private int attempt;
+
+    static private int attempt;
+
+    public static int getAttempt() {
+        return attempt;
+    }
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -17,9 +22,9 @@ public class GuessNumber {
 
     public void launch() {
         Random random = new Random();
-        computerNumber = random.nextInt(101);
+        hiddenNum = random.nextInt(101);
 
-        System.out.println("Компьютер загадал " + computerNumber);
+        System.out.println("Компьютер загадал " + hiddenNum);
         System.out.println("у вас 10 попыток.");
         do {
             inputNumber(player1);
@@ -51,19 +56,19 @@ public class GuessNumber {
     }
 
     private boolean compareNumbers(Player player) {
-        if (player.getEnteredNumbers()[attempt] == computerNumber) {
+        if (player.getEnteredNumbers()[attempt] == hiddenNum) {
             System.out.println(player.getName() + " победил!");
             return true;
         }
-        String result =player.getEnteredNumbers()[attempt] > computerNumber ? "больше" : "меньше";
+        String result = player.getEnteredNumbers()[attempt] > hiddenNum ? "больше" : "меньше";
         System.out.println("Число " + result + " того, что загадал компьютер");
         return false;
     }
 
     private void showPlayerNumbers(Player player) {
         System.out.println("Числа которые ввел " + player.getName());
-        for (int i = 0; i <= attempt; i++) {
-            System.out.print(player.getEnteredNumbers()[i] + " ");
+        for (int number : player.getEnteredNumbers()) {
+            System.out.print(number + " ");
         }
         System.out.println();
     }
